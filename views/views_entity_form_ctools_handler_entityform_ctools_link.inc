@@ -59,11 +59,19 @@ class views_entity_form_ctools_handler_entityform_ctools_link extends views_hand
 
   function render($data) {
     if ($this->options['entityform_name'] != '_none') {
-      $text = $this->options['link_title'];
-      $entityform_name = $this->options['entityform_name'];
-      $theme = $this->options['link_theme'];
+      $entityform_name = $this->tokenize_value($this->options['entityform_name']);
+      $text = $this->tokenize_value($this->options['link_title']);
+      $theme = $this->tokenize_value($this->options['link_theme']);
+      $query = $this->tokenize_value($this->options['link_query']);
+      $query = preg_replace('/&amp;/', '&', $query);
 
-      return entityform_ctools_add_link($text, $entityform_name, $theme);
+      $options = array();
+
+      if ($query = drupal_get_query_array($query)) {
+        $options['query'] = $query;
+      }
+
+      return entityform_ctools_add_link($text, $entityform_name, $theme, $options);
     }
 
     return '';
