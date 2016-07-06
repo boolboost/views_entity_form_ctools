@@ -31,14 +31,13 @@ function views_entity_form_ctools_views_handlers() {
 function views_entity_form_ctools_views_data() {
   $data = array();
 
-  // Add Example group
+  // group
   $data['views_entity_form_ctools']['table']['group'] = t('Entityform ctools');
   $data['views_entity_form_ctools']['table']['join'] = array(
-    // #global is a special flag which let's a table appear all the time.
     '#global' => array(),
   );
 
-  // Add custom field
+  // field
   $data['views_entity_form_ctools']['entityform_ctools_link'] = array(
     'title' => t('Entityform ctools link'),
     'help' => t('Support for links in views'),
