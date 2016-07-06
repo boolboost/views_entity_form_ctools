@@ -1,0 +1,21 @@
+<?php
+/**
+ * @file
+ * views_entity_form_ctools.module
+ *
+ * @author
+ * Name: Boolboost
+ * Web: http://boolboost.com
+ * Email: bool.boost@gmail.com
+ */
+
+/**
+ * Implements hook_views_api().
+ */
+function views_entity_form_ctools_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'views_entity_form_ctools')
+  );
+}
+

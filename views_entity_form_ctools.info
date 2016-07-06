@@ -1,0 +1,8 @@
+name = Views entityform ctools
+description = Support for links in views
+package = Views
+core = 7.x
+
+dependencies[] = views
+dependencies[] = entityform_ctools
+files[] = views/views_entity_form_ctools_handler_entityform_ctools_link.inc
